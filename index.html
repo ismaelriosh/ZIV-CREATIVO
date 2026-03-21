@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrategia Digital y Comercial | Premium</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* --- ESTILOS GENERALES Y RESETEO --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-color: #050505;
+            
+            /* --- FONDO INDUSTRIAL/BRUTALISTA --- */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url('fonddo.png');
+            background-size: cover; 
+            background-position: center center; 
+            background-repeat: no-repeat;
+            background-attachment: fixed; 
+            position: relative;
+        }
+
+        /* --- CONTENEDOR PRINCIPAL --- */
+        .main-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- HEADER --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .logo-img {
+            max-width: 150px; 
+            height: auto;
+            display: block;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 500;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+        }
+
+        .btn-cta-header {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 10px 24px;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-cta-header:hover {
+            background-color: #cccccc;
+        }
+
+        /* --- SECCIÓN HERO --- */
+        .hero {
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: 'Syne', sans-serif;
+            font-weight: 800;
+            font-size: 5vw; 
+            line-height: 1.1;
+            color: #ffffff;
+            text-transform: uppercase;
+            max-width: 1000px;
+            margin: 0 auto 20px;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 600px;
+            margin: 0 auto 50px;
+            font-weight: 400;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        /* --- BOTONES MINIMALISTAS --- */
+        .btn {
+            display: inline-block;
+            padding: 16px 35px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-solid {
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        .btn-solid:hover {
+            background-color: #e0e0e0;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: #ffffff;
+            border: 1px solid #ffffff;
+        }
+
+        .btn-outline:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* --- SECCIÓN DE SERVICIOS --- */
+        .services-container {
+            padding: 0 0 80px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .service-card {
+            background-color: rgba(10, 10, 10, 0.6);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: border-color 0.3s ease;
+        }
+
+        .service-card:hover {
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .card-header-icon {
+            font-family: 'Syne', sans-serif;
+            font-size: 40px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 20px;
+            opacity: 0.2;
+            line-height: 1;
+        }
+
+        .service-card h2 {
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            font-size: 24px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .service-card ul {
+            list-style: none;
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 40px;
+        }
+
+        .service-card ul li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .service-card ul li::before {
+            content: '—';
+            position: absolute;
+            left: 0;
+            color: #ffffff;
+        }
+
+        .price-text {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .price-main {
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            font-size: 36px;
+            color: #ffffff;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+
+        .price-sub {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 30px;
+        }
+
+        /* --- NUESTRA DIFERENCIAL --- */
+        .differential {
+            padding: 100px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .differential blockquote {
+            font-family: 'Syne', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.2;
+            letter-spacing: -1px;
+        }
+
+        .benefits-list {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .benefit-icon {
+            color: #ffffff;
+            font-size: 20px;
+            font-family: 'Syne', sans-serif;
+            font-weight: 800;
+            opacity: 0.5;
+        }
+
+        .benefit-text {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* --- FORMULARIO DE CONTACTO --- */
+        .contact {
+            background-color: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(20px);
+            padding: 80px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            margin: 0 auto 100px;
+            text-align: left;
+        }
+
+        .contact-header {
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .contact-header h2 {
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            font-size: 36px;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .form-group-full {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px 0;
+            border: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            background-color: transparent;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 16px;
+            color: #ffffff;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-bottom: 1px solid #ffffff;
+        }
+
+        .form-group textarea {
+            height: 100px;
+            resize: none;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .footer-logo img {
+            max-width: 100px; 
+            height: auto;
+            opacity: 0.5;
+        }
+
+        .footer-contact-info {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-contact-info:hover {
+            color: #ffffff;
+        }
+
+        /* --- RESPONSIVIDAD --- */
+        @media (max-width: 900px) {
+            .hero h1 { font-size: 42px; }
+            .services-container { grid-template-columns: 1fr; }
+            .differential { grid-template-columns: 1fr; gap: 40px; }
+            .contact { padding: 40px; }
+        }
+
+        @media (max-width: 600px) {
+            header { flex-direction: column; gap: 20px; }
+            nav ul { flex-wrap: wrap; justify-content: center; gap: 15px; }
+            .hero h1 { font-size: 32px; }
+            .hero-btns { flex-direction: column; gap: 15px; }
+            .form-grid { grid-template-columns: 1fr; }
+            footer { flex-direction: column; gap: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-wrapper">
+        <header>
+            <a href="#">
+                <img src="logo.png" alt="Logo Agencia" class="logo-img">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#diferencial">Enfoque</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                    <li><a href="https://wa.me/525540161213" target="_blank" class="btn-cta-header">Empezar</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <h1>Tu Socio en Estrategia Digital y Comercial</h1>
+            <p>Convertimos visiones de negocio en resultados tangibles a través de tecnología, diseño de ultra calidad y embudos de venta comprobados.</p>
+            <div class="hero-btns">
+                <a href="https://wa.me/525540161213" target="_blank" class="btn btn-solid">Hablar con un estratega</a>
+                <a href="#servicios" class="btn btn-outline">Ver Catálogo</a>
+            </div>
+        </section>
+
+        <section class="services-container" id="servicios">
+            <div class="service-card">
+                <div>
+                    <div class="card-header-icon">01</div>
+                    <h2>Catálogos Digitales Premium</h2>
+                    <ul>
+                        <li>Shooting comercial de producto con dirección de arte.</li>
+                        <li><strong>Landing Page de alta conversión con dominio incluido.</strong></li>
+                        <li>Diseño interactivo de alto impacto visual.</li>
+                        <li>Adaptación perfecta a cualquier dispositivo móvil.</li>
+                        <li>Incluye links de compra directos y analíticas.</li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="price-text">Inversión inicial</p>
+                    <p class="price-main">$2,449 <span>MXN</span></p>
+                    <p class="price-sub">Soporte/Actualizaciones: $499 MXN mensuales</p>
+                    <a href="https://wa.me/525540161213" target="_blank" class="btn btn-outline" style="width: 100%; text-align: center;">Desarrollar Proyecto</a>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div>
+                    <div class="card-header-icon">02</div>
+                    <h2>Estrategias de Venta y Marketing</h2>
+                    <ul>
+                        <li>Dominio en Real Estate (Inmobiliario), E-commerce y Salud.</li>
+                        <li><strong>Desarrollo de Landing Page con dominio propio orientada a captación.</strong></li>
+                        <li>Metodología adaptable: decodificamos cualquier giro para crear la estrategia exacta que te hará vender.</li>
+                        <li>Análisis profundo de datos y optimización de embudos (Funnels).</li>
+                        <li>Tráfico dirigido: no solo generamos leads, cerramos ventas.</li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="price-text">Consultoría comercial</p>
+                    <p class="price-main">A medida</p>
+                    <p class="price-sub">Estrategia escalable según el volumen del negocio.</p>
+                    <a href="https://wa.me/525540161213" target="_blank" class="btn btn-solid" style="width: 100%; text-align: center;">Agendar Auditoría</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="differential" id="diferencial">
+            <blockquote>
+                "No somos únicamente diseñadores; somos estrategas del área comercial. Dominamos el ciclo de ventas y usamos la tecnología para escalar tus resultados."
+            </blockquote>
+            
+            <div class="benefits-list">
+                <div class="benefit-item">
+                    <span class="benefit-icon">/</span>
+                    <p class="benefit-text"><strong>Enfoque en ROI:</strong> Beneficios de consultoría estratégica y comercial diseñados estrictamente para el retorno de inversión.</p>
+                </div>
+                <div class="benefit-item">
+                    <span class="benefit-icon">/</span>
+                    <p class="benefit-text"><strong>Data-Driven:</strong> Incremento medible de interacciones, análisis constante de tráfico y optimización en tiempo real.</p>
+                </div>
+                <div class="benefit-item">
+                    <span class="benefit-icon">/</span>
+                    <p class="benefit-text"><strong>Expertise Total:</strong> Un equipo fusionado entre especialistas del área comercial y arquitectos digitales.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact" id="contacto">
+            <div class="contact-header">
+                <h2>Inicia tu Escala</h2>
+            </div>
+            <form action="#">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="name">Nombre / Empresa</label>
+                        <input type="text" id="name" placeholder="Escribe aquí...">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Teléfono de contacto</label>
+                        <input type="tel" id="phone" placeholder="Ej. 55 1234 5678">
+                    </div>
+                    <div class="form-group form-group-full">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" placeholder="contacto@empresa.com">
+                    </div>
+                    <div class="form-group form-group-full">
+                        <label for="message">Detalles del proyecto</label>
+                        <textarea id="message" placeholder="Háblanos sobre los objetivos comerciales de tu marca..."></textarea>
+                    </div>
+                </div>
+                <a href="https://wa.me/525540161213" target="_blank" class="btn btn-solid" style="width: 100%; text-align: center; display: block;">Enviar Solicitud por WhatsApp</a>
+            </form>
+        </section>
+
+        <footer>
+            <div class="footer-logo">
+                <img src="logo.png" alt="Logo Footer">
+            </div>
+            <a href="https://wa.me/525540161213" target="_blank" class="footer-contact-info">WA. 5540161213</a>
+        </footer>
+    </div>
+
+</body>
+</html>
